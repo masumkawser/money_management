@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+ <!-- Money Management Menu Items -->
+
+        <menuitem id="menu_money_management" 
+        name="Money Management"  
+        sequence="0" />
+
+        
+
+        <menuitem id="menu_money" 
+        name="Money Management" 
+        parent="menu_money_management" 
+        action="action_money_management"
+        sequence="1"/>
+
+        
+
+        <menuitem id="menu_total_income" 
+        name="Total Income" 
+        parent="menu_money_management" 
+        action="action_income"
+        sequence="2"/>
+
+        <menuitem id="menu_total_expense" 
+        name="Total Expense" 
+        parent="menu_money_management" 
+        action="action_expense"
+        sequence="3"/>
+    </data>
+</odoo>

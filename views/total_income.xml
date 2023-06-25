@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+<!-- Income tree View -->
+        <record id="view_income_tree" model="ir.ui.view">
+            <field name="name">money.management.income.tree</field>
+            <field name="model">money.management.income</field>
+            <field name="arch" type="xml">
+                <tree string="Income">
+                    
+                    <field name="name"/>
+                    <field name="amount"/>
+                    <!-- <field name="money_management_id"/> -->
+                        
+                </tree>
+            </field>
+        </record>
+
+        <!-- form view -->
+
+        <record id="view_income_form" model="ir.ui.view">
+            <field name="name">money.management.income.form</field>
+            <field name="model">money.management.income</field>
+            <field name="arch" type="xml">
+                <form string="Income">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="amount"/>
+                            <!-- <field name="money_management_id" invisible="1"/> -->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+       
+
+        <!-- Income Action -->
+        <record id="action_income" model="ir.actions.act_window">
+            <field name="name">Income</field>
+            <field name="res_model">money.management.income</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_income_form"/>
+            
+        </record>
+    </data>
+</odoo>

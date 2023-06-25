@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<!-- Money Management View -->
+		<record id="view_money_management_tree" model="ir.ui.view">
+			<field name="name">money.management.tree</field>
+			<field name="model">money.management</field>
+			<field name="arch" type="xml">
+				<tree string="Money Management">
+					<field name="name"/>
+          <field name="total_income" />
+					<field name="total_expense" />
+					<field name="new_balance" />
+				</tree>
+			</field>
+		</record>
+
+    <!-- form view -->
+
+		<record id="view_money_management_form" model="ir.ui.view">
+			<field name="name">money.management.form</field>
+			<field name="model">money.management</field>
+			<field name="arch" type="xml">
+				<form string="Money Management">
+					<sheet>
+						<group>
+              <field name="name"/>
+							<field name="total_income" />
+							<field name="total_expense" />
+							<field name="new_balance" readonly="1" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		
+		
+    <!-- Money Management Action -->
+
+		<record id="action_money_management" model="ir.actions.act_window">
+			<field name="name">Money Management</field>
+			<field name="res_model">money.management</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="view_money_management_tree" />
+		</record>
+	</data>
+</odoo>

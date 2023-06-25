@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!-- Expense Tree View -->
+        <record id="view_expense_tree" model="ir.ui.view">
+            <field name="name">money.management.expense.tree</field>
+            <field name="model">money.management.expense</field>
+            <field name="arch" type="xml">
+                <tree string="Expense">
+                   
+                    <field name="name"/>
+                    <field name="amount"/>
+                    <!-- <field name="money_management_id"/> -->
+                        
+                </tree>
+            </field>
+        </record>
+
+<!-- Expense Form View -->
+        <record id="view_expense_form" model="ir.ui.view">
+            <field name="name">money.management.expense.form</field>
+            <field name="model">money.management.expense</field>
+            <field name="arch" type="xml">
+                <form string="Expense">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="amount"/>
+                            <!-- <field name="money_management_id" invisible="1"/> -->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      
+
+        <!-- Expense Action -->
+        <record id="action_expense" model="ir.actions.act_window">
+            <field name="name">Expense</field>
+            <field name="res_model">money.management.expense</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_expense_form"/>
+            
+        </record>
+    </data>
+</odoo>
